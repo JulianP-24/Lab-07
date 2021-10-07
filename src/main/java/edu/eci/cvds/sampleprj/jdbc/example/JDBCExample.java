@@ -56,6 +56,8 @@ public class JDBCExample {
 
             //int suCodigoECI = 2146251;
             //registrarNuevoProducto(con, suCodigoECI, "Julian Peña", 99999999);
+            //int suCodigoECI2 = 2154840;
+            //registrarNuevoProducto(con, suCodigoECI2, "Mateo Mejia", 88888888);
             //con.commit();
 
             con.close();
@@ -142,7 +144,7 @@ public class JDBCExample {
         ResultSet resultado = valorTotal.executeQuery();
         int total = 0;
         while (resultado.next()) {
-            total = resultado.getInt("total");
+            total += resultado.getInt("total");
         }
         return total;
     }

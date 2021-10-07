@@ -21,7 +21,11 @@ package edu.eci.cvds.samples.services.client;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.sql.Date;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
+import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
+import edu.eci.cvds.samples.entities.Item;
+import edu.eci.cvds.samples.entities.TipoItem;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -66,10 +70,25 @@ public class MyBatisExample {
         
         //Crear el mapper y usarlo: 
         ClienteMapper cm = sqlss.getMapper(ClienteMapper.class);
+        //ItemMapper im = sqlss.getMapper(ItemMapper.class);
         //cm...
-        System.out.println(cm.consultarClientes());
-        
-        
+        //System.out.println(cm.consultarClientes());
+        //cm.agregarItemRentadoACliente(1, 4, Date.valueOf("2020-09-25"), Date.valueOf("2020-09-26"));
+        //new SimpleDateFormat("yyyy/MM/dd").parse("2020/09/25");
+       //System.out.println(cm.consultarCliente(1));
+        //cm.agregarItemRentadoACliente(2, 6, Date.valueOf("2021-08-20"), Date.valueOf("2021-08-26"));
+        System.out.println(cm.consultarCliente(2));
+
+        //System.out.println(im.consultarItems());
+        //System.out.println(im.consultarItem(1));
+        //System.out.println(cm.consultarClientes());
+        //System.out.println(cm.consultarCliente(6));
+        //cm.agregarItemRentadoACliente(998, 4, Date.valueOf("2021-10-21"), Date.valueOf("2021-10-22"));
+
+        //im.insertarItem(new Item(new TipoItem(2, "Accion"), 12345, "funar o ser funado CR", "descripcion",
+                //Date.valueOf("2020-09-25"), 2313, "formato renta", "accion"));
+        //System.out.println(im.consultarItem(12345));
+
         sqlss.commit();
         
         
